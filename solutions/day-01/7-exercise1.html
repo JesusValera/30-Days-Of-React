@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // Declare an empty array
+    const emptyArray = []
+    console.log('Empty array: ' + emptyArray)
+
+    // Declare an array with more than 5 number of elements
+    const moreThan5 = [0, 1, 2, 3, 4, 5, 6, 7]
+
+    // Find the length of your array
+    let lengthArray = moreThan5.length
+    console.log('Length of array with more than 5 elements: ' + lengthArray)
+
+    // Get the first item, the middle item and the last item of the array
+    let firstItem = moreThan5[0]
+    let middleItem = moreThan5[Math.floor(lengthArray / 2)]
+    let lastItem = moreThan5[lengthArray - 1]
+    console.log(`First item: ${firstItem}, middle item: ${middleItem}, last item: ${lastItem}`)
+
+    // Declare an array called mixedDataTypes, put different data types in the array and find the length of the array.
+    // The array size should be greater than 5
+    let mixedDataTypes = [1, 2.0, 'three', true, [5, 6, 7], null];
+
+    // Print the array using console.log()
+    console.log(mixedDataTypes)
+
+    // Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+    let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+
+    // Print the number of companies in the array
+    console.log(itCompanies.length)
+
+    // Print the first company, middle and last company
+    let lengthCompanies = itCompanies.length
+    let firstCompany = itCompanies[0]
+    let middleCompany = itCompanies[Math.floor(lengthCompanies / 2)]
+    let lastCompany = itCompanies[lengthCompanies - 1]
+    console.log(`First company: ${firstCompany}, middle company: ${middleCompany}, last company: ${lastCompany}`)
+
+    // Print out each company
+    console.log(itCompanies)
+
+    // Change each company name to uppercase one by one and print them out
+    console.log(itCompanies.toString().toUpperCase().split(','))
+
+    // Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+    let firstChuck = itCompanies.slice(0, itCompanies.length - 1)
+    console.log(firstChuck.join(', ') + ' and ' + itCompanies[itCompanies.length - 1] + ' are big IT companies.')
+
+    // Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+    console.log(itCompanies.includes('IBM') ? 'IBM: Company found' : 'IBM: Company NOT found')
+    console.log(itCompanies.includes('Alcatel') ? 'Alcatel: Company found' : 'Alcatel: Company NOT found')
+
+    // Filter out companies which have more than one 'o' without the filter method
+    let companiesWithMultipleO = []
+    for (let i = 0; i < itCompanies.length; i++) {
+        if (itCompanies[i].toLowerCase().match('.*o.*o.*')) {
+            companiesWithMultipleO.push(itCompanies[i])
+        }
+    }
+    console.log(companiesWithMultipleO)
+
+    // Sort the array using sort() method
+    console.log(itCompanies.sort())
+
+    // Reverse the array using reverse() method
+    console.log(itCompanies.reverse())
+
+    // Slice out the first 3 companies from the array
+    console.log(itCompanies.slice(3))
+
+    // Slice out the last 3 companies from the array
+    console.log(itCompanies.slice(0, -3))
+
+    // Slice out the middle IT company or companies from the array
+    console.log(itCompanies.slice(0, itCompanies.length / 2 - 1).concat(itCompanies.slice(itCompanies.length / 2 + 2)))
+
+    // Remove the first IT company from the array
+    itCompanies.shift()
+    console.log(itCompanies)
+
+    // Remove the middle IT company or companies from the array
+    itCompanies.splice(2, 2)
+    console.log(itCompanies)
+
+    // Remove the last IT company from the array
+    itCompanies.pop()
+    console.log(itCompanies)
+
+    // Remove all IT companies
+    console.log(itCompanies.splice(0, -1))
+</script>
+</body>
+</html>

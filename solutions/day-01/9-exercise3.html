@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="countries.js"></script>
+<script>
+    // The following is an array of 10 students ages: js const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+    // - Sort the array and find the min and max age
+    let sortedAges = ages.sort()
+    console.log(sortedAges)
+    let maxAge = sortedAges[ages.length - 1];
+    let minAge = sortedAges[0];
+    console.log(`Max age: ${maxAge}, min age: ${minAge}`)
+    // - Find the median age(one middle item or two middle items divided by two)
+    console.log(`Median age: ${sortedAges[Math.floor(ages.length / 2)]}`)
+    // - Find the average age(all items divided by number of items)
+    let total = sortedAges.reduce((a, b) => a + b)
+    let average = total / ages.length
+    console.log(average)
+    // - Find the range of the ages(max minus min)
+    console.log(maxAge - minAge)
+    // - Compare the value of (min - average) and (max - average), use abs() method
+    let minAvg = minAge - average
+    let maxAvg = maxAge - average
+    console.log(Math.abs(minAge - maxAvg))
+
+    // Slice the first ten countries from the countries array
+    console.log(countries.slice(0, 10))
+
+    // Find the middle country(ies) in the countries array
+    let totalCountries = countries.length
+    let isEven = totalCountries % 2 === 0
+
+    if (isEven) {
+        let middle = Math.floor(countries.length / 2)
+        console.log(countries.slice(middle - 1, middle + 1))
+    } else {
+        console.log(countries[Math.floor(countries.length / 2)])
+    }
+
+    // Divide the countries array into two equal arrays if it is even.
+    // If countries array is not even, one more country for the first half.
+    let chunks = [];
+    let chunkSize = countries.length / 2;
+    for (let i = 0, len = countries.length; i < len; i += chunkSize) {
+        chunks.push(countries.slice(i, i + chunkSize))
+    }
+    console.log(chunks)
+</script>
+</body>
+</html>
