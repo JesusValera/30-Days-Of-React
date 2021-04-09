@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*
+    Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
+    September, October or November, the season is Autumn.
+    December, January or February, the season is Winter.
+    March, April or May, the season is Spring
+    June, July or August, the season is Summer
+     */
+    let autumn = ['September', 'October ', 'November']
+    let winter = ['December', 'January', 'February']
+    let spring = ['March', 'April', 'May']
+    let summer = ['June', 'July', 'August']
+
+    let month = prompt('Which month is?')
+
+    if (autumn.includes(month)) {
+        console.log('The season is Autumn')
+    } else if (winter.includes(month)) {
+        console.log('The season is Winter')
+    } else if (spring.includes(month)) {
+        console.log('The season is Spring')
+    } else if(summer.includes(month)) {
+        console.log('The season is Summer')
+    }
+
+    // Check if a day is weekend day or a working day
+    let day = prompt('What is the day today?')
+    let capitalizeDay = day.charAt(0).toUpperCase() + day.slice(1)
+    if (['Saturday', 'Sunday'].includes(day)) {
+        console.log(`${capitalizeDay} is a weekend`)
+    } else {
+        console.log(`${capitalizeDay} is a working day`)
+    }
+</script>
+</body>
+</html>

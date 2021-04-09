@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let age = prompt('Enter your age')
+
+    if (age >= 18) {
+        console.log('You are old enough to drive.')
+    } else {
+        console.log(`You are left wit ${18 - age} years to drive.`)
+    }
+
+    let myAge = prompt('Enter my age')
+    let yourAge = prompt('Enter your age')
+
+    if (myAge === yourAge) {
+        console.log('We are the same old')
+    } else if (myAge > yourAge) {
+        console.log(`I am ${myAge - yourAge} years older than you`)
+    } else {
+        console.log(`You are ${yourAge - myAge} years older than me`)
+    }
+
+    let a = 4
+    let b = 3
+    if (a > b) {
+        console.log(`${a} is greater than ${b}`)
+    } else {
+        console.log(`${b} is greater than ${a}`)
+    }
+
+    (a > b)
+        ? console.log(`${a} is greater than ${b}`)
+        : console.log(`${b} is greater than ${a}`)
+
+    let number = prompt('Enter a number')
+    if (number % 2 === 0) {
+        console.log(`${number} is an even number`)
+    } else {
+        console.log(`${number} is an odd number`)
+    }
+</script>
+</body>
+</html>

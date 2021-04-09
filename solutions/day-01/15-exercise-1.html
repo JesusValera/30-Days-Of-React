@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // Create an empty object called dog
+    let dog = {}
+    // Print the the dog object on the console
+    console.log(dog)
+    // Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
+    dog.name = 'Lucho'
+    dog.legs = 4
+    dog.color = 'brown'
+    dog.age = 2.5
+    dog.bark = function () {
+        return 'woof woof'
+    }
+    // Get name, legs, color, age and bark value from the dog object
+    console.log(Object.values(dog))
+    // Set new properties the dog object: breed, getDogInfo
+    dog.breed = 'German Shepherd'
+    dog.getInfo = function () {
+        return `The dog ${this.name} (${this.breed}), with ${this.legs} legs, ${this.age} years old and ${this.color} skin color does: "${this.bark()}"`
+    }
+    console.log(dog.getInfo())
+</script>
+</body>
+</html>

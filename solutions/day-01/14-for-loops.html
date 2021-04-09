@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // for
+    // We use for loop when we know how many iteration we go. Let's see the following example
+    for (let i = 0; i < 5; i++) {
+        console.log(`For: ${i}`)
+    }
+
+    // while
+    // We use the while loop when we do not know how man iteration we go in advance
+    let whileCount = 4
+    while (whileCount >= 0) {
+        console.log(`While: ${whileCount}`)
+        whileCount--
+    }
+
+    // do while
+    let doWhileCount = 0
+    do {
+        console.log(`Do while: ${doWhileCount}`)
+        doWhileCount++
+    } while (doWhileCount < 5)
+
+    // for of
+    // The for of loop is very handy to use it with array.
+    // If we are not interested in the index of the array a for of loop is preferable to regular for loop or forEach loop
+    const forOfNumbers = [0, 1, 2, 3, 4]
+    for (const number of forOfNumbers) {
+        console.log(`For of: ${number}`)
+    }
+
+    // for each
+    // If we are interested in the index of the array forEach is preferable to for of loop.
+    // The forEach array method takes a callback function,
+    //  the callback function takes three arguments: the item, the index and the array itself.
+    const forEachNumbers = [1, 2, 3, 4, 5]
+    forEachNumbers.forEach((number, index, array) => {
+        console.log(`Foreach => index: ${index}, number: ${number}`)
+    })
+
+    // for in
+    // The for in loop can be used with object literals to get the keys of the object
+    const user = {
+        firstName: 'Jesus',
+        lastName: 'Valera',
+        age: 25,
+        country: 'Spain',
+        skills: ['HTML', 'CSS', 'JS', 'React', 'Node'],
+    }
+
+    for (const key in user) {
+        console.log(key, user[key])
+    }
+
+    /*
+    * Conclusions:
+
+    - Regular for loop can be used anywhere when the number of iteration is known.
+    - While loop when the number of iteration is not know
+    - Do while loop and while loop are almost the same but do while loop run at least once even when the condition is false
+    - for of is used only for array
+    - forEach is used for array
+    - for in is used for object
+     */
+</script>
+</body>
+</html>

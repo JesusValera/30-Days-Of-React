@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // Write a program which tells the number of days in a month, consider leap year.
+    let monthsWith31Days = ['January', 'March', 'May', 'July', 'August', 'October', 'December']
+    let monthsWith30Days = ['April', 'June', 'September', 'November']
+    let monthWith28Days = ['February']
+
+    let month = prompt('Enter a month')
+    let year = prompt('Enter a year')
+
+    if (monthsWith31Days.includes(month)) {
+        console.log(`${month} has 31 days`)
+    } else if (monthsWith30Days.includes(month)) {
+        console.log(`${month} has 30 days`)
+    } else if (monthWith28Days.includes(month)) {
+        if (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)) {
+            console.log(`${month} has 29 days`)
+        } else {
+            console.log(`${month} has 28 days`)
+        }
+    } else {
+        console.log('Unknown month. :(')
+    }
+</script>
+</body>
+</html>
