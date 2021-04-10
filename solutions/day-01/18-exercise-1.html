@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // Declare a function fullName and it takes firstName, lastName as a parameter and it returns your full - name
+    let fullName = (firstName, lastName) => `${firstName} ${lastName}`
+    console.log(fullName('Jesus', 'Valera'))
+
+    // Declare a function addNumbers and it takes two two parameters and it returns sum.
+    let addNumbers = (number1, number2) => number1 + number2
+    console.log(`2 + 3 = ${addNumbers(2, 3)}`)
+
+    // Area of a circle is calculated as follows: area = π x r x r
+    let areaOfCircle = (radio) => 3.14 * (radio ** 2)
+    console.log(areaOfCircle(2))
+
+    // Temperature in C can be converted to F using this formula: F = (C x 9/5) + 32
+    let convertCelsiusToFahrenheit = (celsius) => (celsius * 9/5) + 32
+    console.log(convertCelsiusToFahrenheit(26))
+
+    // Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2
+    // BMI is used to broadly define different weight groups in adults 20 years old or older
+    // Check if a person is underweight, normal, overweight or obese based the information given below.
+    // The same groups apply to both men and women.
+    // + Underweight: BMI is less than 18.5
+    // + Normal weight: BMI is 18.5 to 24.9
+    // + Overweight: BMI is 25 to 29.9
+    // + Obese: BMI is 30 or more
+    let bmi = (weight, height) => {
+        let value = (weight / (height * height)).toFixed(2)
+        if (value <= 18.5) {
+            return `You are ${value}, that stands you are underweight`
+        } else if (value <= 24.9) {
+            return `You are ${value}, that stands you are normal weight`
+        } else if (value <= 29.9) {
+            return `You are ${value}, that stands you are overweight`
+        } else {
+            return `You are ${value}, that stands you are obese`
+        }
+    }
+    console.log(bmi(76, 1.90))
+
+    // Write a function called checkSeason, it takes a month parameter and returns the season
+    let checkSeason = (month) => {
+        let autumn = ['September', 'October ', 'November']
+        let winter = ['December', 'January', 'February']
+        let spring = ['March', 'April', 'May']
+        let summer = ['June', 'July', 'August']
+
+        if (autumn.includes(month)) {
+            return 'Autumn'
+        } else if (winter.includes(month)) {
+            return 'Winter'
+        } else if (spring.includes(month)) {
+            return 'Spring'
+        } else if(summer.includes(month)) {
+            return 'Summer'
+        } else {
+            return 'unknown'
+        }
+    }
+    console.log(`February is ${checkSeason('February')}`)
+    console.log(`April is ${checkSeason('April')}`)
+    console.log(`qwerty is ${checkSeason('qwerty')}`)
+</script>
+</body>
+</html>

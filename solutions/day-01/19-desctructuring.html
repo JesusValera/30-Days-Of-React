@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    const person = {
+        firstName: 'Jesus',
+        lastName: 'Valera',
+        age: 25,
+        country: 'Spain',
+        job: 'Instructor and Developer',
+        skills: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB',
+            'Python',
+            'D3.js',
+        ],
+        languages: ['Spanish', 'English', 'German'],
+    }
+
+    /*
+    Jesus Valera lives in Spain. He is  25 years old. He is an Instructor and Developer.
+    He teaches HTML, CSS, JavaScript, React, Redux, Node, MongoDB, Python and D3.js.
+    He speaks Spanish, English and a little bit of German.
+    */
+
+    // Create a function called getPersonInfo. The function takes an object parameter.
+    // Try to use both a regular way and destructuring and compare the code.
+    let getPersonInfoRegular = function (person) {
+        let skills = person.skills.slice(0, -1).join(', ') + ' and ' + person.skills[person.skills.length - 1]
+        let languages = person.languages.slice(0, -1).join(', ') + ' and a little bit of '
+            + person.languages[person.languages.length - 1]
+
+        return `${person.firstName} ${person.lastName} lives in ${person.country}. `
+            + `He is ${person.age} years old. He is an ${person.job}. `
+            + `He teaches ${skills}. `
+            + `He speaks ${languages}`
+    }
+
+    let getPersonInfoDestructuring = function (person) {
+        let {firstName, lastName, age, country, job, skills, languages} = person
+        let [html, css, javascript, react, redux, node, mongodb, python, d3js] = skills
+        let [spanish, english, german] = languages
+
+        return `${firstName} ${lastName} lives in ${country}. `
+            + `He is ${age} years old. He is an ${job}. `
+            + `He teaches ${html}, ${css}, ${javascript}, ${react}, ${redux}, ${node}, ${mongodb}, ${python} and ${d3js}. `
+            + `He speaks ${spanish}, ${english} and a little bit of ${german}`
+    }
+    console.log(getPersonInfoRegular(person))
+    console.log(getPersonInfoDestructuring(person))
+</script>
+</body>
+</html>
