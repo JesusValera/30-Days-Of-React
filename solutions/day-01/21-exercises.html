@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    const products = [
+        {product: 'banana', price: 3},
+        {product: 'mango', price: 6},
+        {product: 'potato', price: ''},
+        {product: 'avocado', price: 8},
+        {product: 'coffee', price: 10},
+        {product: 'tea', price: ''},
+    ]
+    // Print the price of each product using forEach
+    products.forEach((product) => console.log(product.price))
+
+    // Print the product items using forEach
+    products.forEach((product) => {
+        let {product: productName, price} = product
+        if (price === '') {
+            price = 'unknown'
+        } else {
+            price += ' euros'
+        }
+        console.log(`The price of ${productName} is ${price}.`)
+    })
+
+    // Calculate the sum of all the prices using forEach
+    let total = 0
+    products.forEach((product) => {
+        let price = product.price
+        if (price === '') {
+            price = 0
+        }
+        total += price
+    })
+    console.log(`The sum of all the prices is ${total}`)
+
+    // Create an array of prices using map and store it in a variable prices
+    let prices = products.map((product) => product.price)
+    console.log(prices)
+
+    // Filter products with prices
+    let productsWithPrices = products.filter((product) => product.price !== '')
+    console.log(productsWithPrices)
+
+    // Use method chaining to get the sum of the prices(map, filter, reduce)
+    let chainingPrices = products.map((product) => product.price)
+        .filter((prices) => prices !== '')
+        .reduce((acc, price) => acc += price, 0)
+    console.log(chainingPrices)
+
+    // Calculate the sum of all the prices using reduce only
+    let totalPrices = products.reduce((acc, product) => {
+        let price = product.price
+        if (price === '') {
+            price = 0
+        }
+        return acc += price
+    }, 0)
+    console.log(totalPrices)
+
+    // Find the first product which doesn't have a price value
+    let productWithoutPrice = products.find((product) => product.price === '')
+    console.log(productWithoutPrice)
+
+    // Find the index of the first product which does not have price value
+    let productIndexWithoutPrice = products.findIndex((product) => product.price === '')
+    console.log(productIndexWithoutPrice)
+
+    // Check if some products do not have a price value
+    let isSomeProductWithoutPrice = products.some((product) => product.price === '')
+    console.log(isSomeProductWithoutPrice)
+
+    // Check if all the products have price value
+    let isEveryProductWithPrice = products.every((product) => product.price !== '')
+    console.log(isEveryProductWithPrice)
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // forEach
+    // We use forEach when we like to iterate through an array of items.
+    // We use it when you are interested in each item or index or both (it returns VOID).
+    const foreachCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    foreachCountries.forEach((country, index) => console.log(index, country.toUpperCase()))
+    /*
+    0 "SPAIN"
+    1 "GERMANY"
+    2 "PORTUGAL"
+    3 "FRANCE"
+     */
+
+    // map
+    // We use the map method whenever we like to modify an array, it always returns an array.
+    const mapCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const mappedCountries = mapCountries.map((country) => country.toUpperCase())
+    console.log(mappedCountries) // ["SPAIN", "GERMANY", "PORTUGAL", "FRANCE"]
+
+    // filter
+    // The filter returns an array of the filtered items.
+    const filterCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const filteredCountries = filterCountries.filter((country) => country.includes('an'))
+    console.log(filteredCountries) // ["Germany", "France"]
+
+    // reduce
+    // The reduce returns a single value. The default initial value is 0, we can change it.
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let initialValue = 5
+    const sum = numbers.reduce((accumulator, value) => accumulator + value, initialValue)
+    console.log(sum) // 60
+
+    // find
+    // If we are interested in the first occurrence of a certain item or element in an array.
+    // Just return the first occurrence of an item instead of an array.
+    const findCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const foundCountry = findCountries.find((country) => country.includes('an'))
+    console.log(foundCountry) // Germany
+
+    // findIndex
+    // The findIndex method works like find but findIndex returns the index of the item.
+    const findIndexCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const foundIndexCountry = findIndexCountries.findIndex((country) => country.includes('an'))
+    console.log(foundIndexCountry) // 1
+
+    // some
+    // The some method is used with array and return a boolean.
+    // If any of the items satisfy the criteria the result will be true, else, false.
+    const someLandCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const isSomeAnCountry = someLandCountries.some((country) => country.includes('an'))
+    const isSomeLandCountry = someLandCountries.some((country) => country.includes('land'))
+    console.log(isSomeAnCountry) // true
+    console.log(isSomeLandCountry) // false
+
+    // every
+    // The method every is somehow similar to some but every item must satisfy the criteria.
+    // The method every like some returns a boolean.
+    const everyCountries = ['Spain', 'Germany', 'Portugal', 'France']
+    const isEveryCountryHasA = everyCountries.every((country) => country.includes('a'))
+    const isEveryCountryHasE = everyCountries.every((country) => country.includes('e'))
+    console.log(isEveryCountryHasA) // true
+    console.log(isEveryCountryHasE) // false
+</script>
+</body>
+</html>
